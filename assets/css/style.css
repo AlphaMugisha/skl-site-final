@@ -1,0 +1,192 @@
+/* NGA Coding Academy - Professional UI Style 
+    Inspired by: newgenerationacademy.ac.rw
+    Palette: Navy (#0A1F44), Cyan (#00C2FF), Accent (#111111)
+*/
+
+:root {
+    --primary: #0A1F44;
+    --secondary: #00C2FF;
+    --dark: #111111;
+    --white: #ffffff;
+    --bg-light: #F8FAFC;
+    --text-main: #2D3748;
+    --text-muted: #718096;
+    --radius: 12px;
+    --shadow: 0 10px 25px -5px rgba(10, 31, 68, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    background-color: var(--white);
+    line-height: 1.7;
+}
+
+/* 2. Professional Navigation */
+header {
+    background: var(--white);
+    padding: 1.2rem 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--secondary); }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav ul a:hover, nav ul a.active {
+    color: var(--secondary);
+}
+
+/* 3. Hero Section (Official NGA Style) */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #061633 100%);
+    padding: 120px 8% 100px;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+/* 4. Buttons & Interaction */
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--secondary);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid var(--secondary);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 194, 255, 0.2);
+}
+
+/* 5. Modern Cards Grid */
+.container {
+    padding: 80px 8%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    border: 1px solid #E2E8F0;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* 6. Levels Section */
+.levels-section {
+    background-color: var(--bg-light);
+    border-radius: 24px;
+    padding: 60px 40px;
+}
+
+.level-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(0, 194, 255, 0.1);
+    color: var(--secondary);
+    font-weight: 700;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+/* 7. Footer */
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 60px 8% 30px;
+    text-align: center;
+}
+
+.footer-text { opacity: 0.6; font-size: 0.9rem; }
+
+/* 8. Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Add hamburger menu logic here */
+    .hero h1 { font-size: 2.2rem; }
+    .container { padding: 60px 5%; }
+}
